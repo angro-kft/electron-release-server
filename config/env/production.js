@@ -11,15 +11,24 @@
  */
 
 module.exports = {
-
   /***************************************************************************
    * Set the default database connection for models in the production        *
    * environment (see config/datastores.js and config/models.js )            *
    ***************************************************************************/
 
   models: {
-    datastore: 'postgresql',
-    migrate: 'safe'
+    datastore: "postgresql",
+    migrate: "safe",
+  },
+
+  session: {
+    cookie: {
+      secure: true,
+    },
+  },
+
+  sockets: {
+    onlyAllowOrigins: ["https://releases.prd.angro.local"],
   },
 
   /***************************************************************************
@@ -39,5 +48,4 @@ module.exports = {
   // auth: {
   //   secret: 'temppass'
   // }
-
 };
